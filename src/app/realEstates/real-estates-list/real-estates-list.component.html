@@ -6,16 +6,6 @@
 <hr>
 <div class="row">
     <div class="col-xs-12">
-        <a href="#" class="list-group-item clearfix" *ngFor="let item of realEstates">
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">{{item.name}}</h4>
-                <hr>
-                <h4 class="list-group-item-heading">Price: <span class="bolder">{{item.price}} $</span></h4>
-            </div>
-            <span class="pull-right">
-                <img src="{{item.imagePath}}" alt="{{item.name}}" class="img-responsive">
-            </span>
-        </a>
-        <app-real-estate-item></app-real-estate-item>
+        <app-real-estate-item *ngFor="let itemElement of realEstates" [item]="itemElement" (itemToDetails)="onItemToDetails($event)"></app-real-estate-item>
     </div>
 </div>

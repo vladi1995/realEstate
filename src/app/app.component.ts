@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { RealEstate } from './realEstates/realEstate.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+  chosenCategory: string = 'realEstateList';
+
+  onChooseCategory(event: string) {
+    this.chosenCategory = event;
+  }
+
+  realEstateToDetailsFromApp: RealEstate;
+
+  onShowDetails(event: RealEstate) {
+    this.realEstateToDetailsFromApp = event;
+  }
 }

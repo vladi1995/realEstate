@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RealEstate } from '../../realEstate.model';
 
 @Component({
   selector: 'app-real-estate-item',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./real-estate-item.component.css']
 })
 export class RealEstateItemComponent {
+  @Input() item: RealEstate;
+  @Output() itemToDetails = new EventEmitter<RealEstate>();
 
+  onSendToDetails() {
+    this.itemToDetails.emit(this.item);
+  }
 }
