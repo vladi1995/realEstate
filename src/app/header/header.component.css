@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+.container-fluid {
+    background-color: #cce6ff;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 10px;
+}
+
+.navbar-brand {
+    font-size: 20px;
+}
+
+.nav.navbar-nav {
+    font-size: 15px;
+}

@@ -1,0 +1,11 @@
+img {
+    max-height: 85px;
+}
+
+.bolder {
+    font-weight: bold;
+}
+
+.list-group-item-text {
+    padding: 5px;
+}
