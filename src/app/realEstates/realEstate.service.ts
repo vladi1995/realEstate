@@ -1,7 +1,10 @@
 import { RealEstate } from "./realEstate.model";
 import { TypeOfHouse } from "../shared/typeOfHouses";
+import { EventEmitter } from "@angular/core";
 
 export class RealEstateService {
+    public realEstateSelected = new EventEmitter<RealEstate>();
+
     private realEstates: RealEstate[] = [
         new RealEstate(
           "2 room beautiful apartment", 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RealEstate } from '../realEstate.model';
 import { TypeOfHouse } from 'src/app/shared/typeOfHouses';
 import { RealEstateService } from '../realEstate.service';
@@ -10,12 +10,6 @@ import { RealEstateService } from '../realEstate.service';
   providers: [RealEstateService],
 })
 export class RealEstatesListComponent implements OnInit {
-  @Output() realEstateToDetailsFromList = new EventEmitter<RealEstate>();
-
-  onItemToDetails(event: RealEstate) {
-    this.realEstateToDetailsFromList.emit(event);
-  }
-
   realEstates: RealEstate[];
 
   constructor(private realEstateService: RealEstateService) {}

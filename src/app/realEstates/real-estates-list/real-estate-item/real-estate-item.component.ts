@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RealEstate } from '../../realEstate.model';
+import { RealEstateService } from '../../realEstate.service';
 
 @Component({
   selector: 'app-real-estate-item',
@@ -8,9 +9,10 @@ import { RealEstate } from '../../realEstate.model';
 })
 export class RealEstateItemComponent {
   @Input() item: RealEstate;
-  @Output() itemToDetails = new EventEmitter<RealEstate>();
+
+  constructor(private realEstateService: RealEstateService) {}
 
   onSendToDetails() {
-    this.itemToDetails.emit(this.item);
+    this.realEstateService.realEstateSelected.emit(this.item);
   }
 }
