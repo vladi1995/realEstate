@@ -1,7 +1,8 @@
 import { RealEstate } from "./realEstate.model";
 import { TypeOfHouse } from "../shared/typeOfHouses";
-import { EventEmitter } from "@angular/core";
+import { EventEmitter, Injectable } from "@angular/core";
 
+@Injectable({providedIn: 'root'})
 export class RealEstateService {
     public realEstateSelected = new EventEmitter<RealEstate>();
 

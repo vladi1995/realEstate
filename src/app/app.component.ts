@@ -25,10 +25,4 @@ export class AppComponent implements OnInit {
   onChooseCategory(event: string) {
     this.chosenCategory = event;
   }
-
-  realEstateToDetailsFromApp: RealEstate;
-
-  onShowDetails(event: RealEstate) {
-    this.realEstateToDetailsFromApp = event;
-  }
 }

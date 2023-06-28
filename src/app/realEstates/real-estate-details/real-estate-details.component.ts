@@ -9,9 +9,7 @@ import { RealEstate } from '../realEstate.model';
 export class RealEstateDetailsComponent {
   @Input() realEstateToDetailsFromApp: RealEstate;
 
-
   onShow() {
     console.log(this.realEstateToDetailsFromApp);
-    
   }
 }
