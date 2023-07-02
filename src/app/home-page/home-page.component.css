@@ -1,0 +1,12 @@
+.inputSearch {
+    padding: 5px;
+    width: 80%;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+button {
+    margin-bottom: 3px;
+    margin-left: 10px;
+}

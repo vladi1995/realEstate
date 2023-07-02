@@ -8,7 +8,6 @@ import { RealEstateService } from './realEstates/realEstate.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  chosenCategory: string = 'realEstateList';
   selectedRealEstate: RealEstate;
 
   constructor(private realEstateService: RealEstateService) {}
@@ -20,9 +19,5 @@ export class AppComponent implements OnInit {
         this.selectedRealEstate = realEstateChonsen;
       }
     )
-  }
-
-  onChooseCategory(event: string) {
-    this.chosenCategory = event;
   }
 }

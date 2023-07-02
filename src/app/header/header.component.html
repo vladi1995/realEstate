@@ -4,13 +4,13 @@
             <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
                 <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
             </button>
-            <a href="#" class="navbar-brand">Real Estate Agency</a>
+            <a class="navbar-brand" routerLink="/">Real Estate Agency</a>
         </div>
 
         <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
             <ul class="nav navbar-nav">
-                <li><a style="cursor: pointer" (click)="onChooseCategory('realEstateList')">Real Estate List</a></li>
-                <li><a style="cursor: pointer" (click)="onChooseCategory('wishList')">Wish List</a></li>
+                <li routerLinkActive="active"><a style="cursor: pointer" routerLink="/realEstateList">Real Estate List</a></li>
+                <li routerLinkActive="active"><a style="cursor: pointer" routerLink="/wishList">Wish List</a></li>
                 <li><a href="#">About</a></li>
             </ul>
 

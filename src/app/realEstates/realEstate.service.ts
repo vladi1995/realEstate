@@ -23,4 +23,8 @@ export class RealEstateService {
     getRealEstate() {
         return this.realEstates.slice();
     }
+
+    getCurrentRealEstate(index: number) {
+      return this.realEstates[index];
+    }
 }

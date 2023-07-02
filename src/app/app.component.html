@@ -1,10 +1,13 @@
-<app-header (chosenCategory)="onChooseCategory($event)"></app-header>
+<app-header></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-real-estates-list *ngIf="chosenCategory==='realEstateList' && !selectedRealEstate"></app-real-estates-list>
+      <!-- <app-real-estates-list *ngIf="chosenCategory==='realEstateList' && !selectedRealEstate"></app-real-estates-list>
       <app-wish-list *ngIf="chosenCategory==='wishList'"></app-wish-list>
-      <app-real-estate-details *ngIf="selectedRealEstate" [realEstateToDetailsFromApp]="selectedRealEstate"></app-real-estate-details>
+      <app-real-estate-details *ngIf="selectedRealEstate" [realEstateToDetailsFromApp]="selectedRealEstate"></app-real-estate-details> -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+<br />
+<app-footer></app-footer>

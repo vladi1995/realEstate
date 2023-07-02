@@ -9,6 +9,9 @@ import { WishListComponent } from './wishList/wishList.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomePageComponent } from './home-page/home-page.component';
+import { RealEstateEditComponent } from './realEstates/real-estate-edit/real-estate-edit.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +22,13 @@ import { AboutComponent } from './about/about.component';
     WishListComponent,
     HeaderComponent,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    HomePageComponent,
+    RealEstateEditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

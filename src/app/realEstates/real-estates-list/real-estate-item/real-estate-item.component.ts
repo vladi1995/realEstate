@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { RealEstate } from '../../realEstate.model';
-import { RealEstateService } from '../../realEstate.service';
 
 @Component({
   selector: 'app-real-estate-item',
@@ -9,10 +8,6 @@ import { RealEstateService } from '../../realEstate.service';
 })
 export class RealEstateItemComponent {
   @Input() item: RealEstate;
-
-  constructor(private realEstateService: RealEstateService) {}
-
-  onSendToDetails() {
-    this.realEstateService.realEstateSelected.emit(this.item);
-  }
+  @Input() i: number;
+  
 }
