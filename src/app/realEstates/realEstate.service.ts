@@ -2,8 +2,12 @@ import { RealEstate } from "./realEstate.model";
 import { TypeOfHouse } from "../shared/typeOfHouses";
 import { Injectable } from "@angular/core";
 
+import { Subject } from 'rxjs';
+
 @Injectable({providedIn: 'root'})
 export class RealEstateService {
+    realEstateChanged = new Subject<RealEstate[]>();
+
     private realEstates: RealEstate[] = [
         new RealEstate(
           "2 room beautiful apartment", 
@@ -24,5 +28,20 @@ export class RealEstateService {
 
     getCurrentRealEstate(index: number) {
       return this.realEstates[index];
+    }
+
+    addRealEstate(realEstate: RealEstate) {
+      this.realEstates.push(realEstate);
+      this.realEstateChanged.next(this.realEstates.slice());
+    }
+
+    updateRealEstate(index: number, newRealEstate: RealEstate) {
+      this.realEstates[index] = newRealEstate;
+      this.realEstateChanged.next(this.realEstates.slice());
+    }
+
+    deleteRealEstate(index: number) {
+      this.realEstates.splice(index, 1);
+      this.realEstateChanged.next(this.realEstates.slice());
     }
 }

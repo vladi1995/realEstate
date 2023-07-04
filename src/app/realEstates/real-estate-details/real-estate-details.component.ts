@@ -27,4 +27,9 @@ export class RealEstateDetailsComponent implements OnInit {
   onEditRealEstate() {
     this.router.navigate(['edit'], {relativeTo: this.route});
   }
+
+  onDeleteRealEstate() {
+    this.realEstateService.deleteRealEstate(this.id);
+    this.router.navigate(['/realEstateList']);
+  }
 }

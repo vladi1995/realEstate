@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { TypeOfHouse } from 'src/app/shared/typeOfHouses';
 import { RealEstateService } from '../realEstate.service';
+import { RealEstate } from '../realEstate.model';
 
 @Component({
   selector: 'app-real-estate-edit',
@@ -15,7 +16,7 @@ export class RealEstateEditComponent implements OnInit {
   typeOfHouse: string[] = Object.values(TypeOfHouse);
   realEstateForm: FormGroup;
 
-  constructor(private route: ActivatedRoute, private realEstateService: RealEstateService) {}
+  constructor(private route: ActivatedRoute, private realEstateService: RealEstateService, private router: Router) {}
 
   ngOnInit(): void {    
     this.route.params.subscribe(
@@ -28,7 +29,22 @@ export class RealEstateEditComponent implements OnInit {
   }
 
   onSubmit() {
+    const newRealEstate = new RealEstate(
+      this.realEstateForm.value['name'],
+      this.realEstateForm.value['description'],
+      this.realEstateForm.value['imagePath'],
+      this.realEstateForm.value['type'],
+      this.realEstateForm.value['price'],
+      this.realEstateForm.value['size'],
+      this.realEstateForm.value['town'],
+    );
+    if (this.editMode) {
+      this.realEstateService.updateRealEstate(this.id, newRealEstate);
+    } else {
+      this.realEstateService.addRealEstate(newRealEstate);
+    }
 
+    this.onCancel();
   }
 
   private initForm() {
@@ -61,5 +77,9 @@ export class RealEstateEditComponent implements OnInit {
       'size': new FormControl(realEstateSize, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'price': new FormControl(realEstatePrice, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
     });
+  }
+
+  onCancel() {
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 }
