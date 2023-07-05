@@ -4,6 +4,7 @@ import { RealEstateService } from '../realEstate.service';
 
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 
 @Component({
   selector: 'app-real-estates-list',
@@ -21,7 +22,6 @@ export class RealEstatesListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.realEstates = this.realEstateService.getRealEstate();
-
     this.subscription = this.realEstateService.realEstateChanged.subscribe(
       (realEstate: RealEstate[]) => {
         this.realEstates = realEstate;

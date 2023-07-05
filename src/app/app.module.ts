@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RealEstateItemComponent } from './realEstates/real-estates-list/real-estate-item/real-estate-item.component';
@@ -33,6 +34,7 @@ import { RealEstateService } from './realEstates/realEstate.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [RealEstateService],
   bootstrap: [AppComponent]
