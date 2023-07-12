@@ -6,6 +6,7 @@ import { HomePageComponent } from "./home-page/home-page.component";
 import { RealEstateDetailsComponent } from "./realEstates/real-estate-details/real-estate-details.component";
 import { RealEstateEditComponent } from "./realEstates/real-estate-edit/real-estate-edit.component";
 import { RealEstateResolverService } from "./realEstates/realEstate-resolver.service";
+import { AuthComponent } from "./auth/auth.component";
 
 const appRoutes: Routes = [
     { path: '', component: HomePageComponent },
@@ -14,6 +15,7 @@ const appRoutes: Routes = [
     { path: 'realEstateList/:id', component: RealEstateDetailsComponent, resolve: [RealEstateResolverService] },
     { path: 'realEstateList/:id/edit', component: RealEstateEditComponent, resolve: [RealEstateResolverService] },
     { path: 'wishList', component: WishListComponent },
+    { path: 'auth', component: AuthComponent },
 ]; 
 
 @NgModule({

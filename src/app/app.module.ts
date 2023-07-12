@@ -15,6 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RealEstateEditComponent } from './realEstates/real-estate-edit/real-estate-edit.component';
 import { RealEstateService } from './realEstates/realEstate.service';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { RealEstateService } from './realEstates/realEstate.service';
     FooterComponent,
     AboutComponent,
     HomePageComponent,
-    RealEstateEditComponent
+    RealEstateEditComponent,
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
