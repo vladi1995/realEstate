@@ -18,11 +18,11 @@
             </div>
 
             <div>
-                <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">{{ isLoginMode ? "Login" : "Sign Up"}}</button> |
-                <button class="btn btn-primary" (click)="onSwitchMode()" type="button">
-                    {{ isLoginMode ? "Sign Up" : "Login"}}
-                </button>
+                <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">Login</button>
             </div>
         </form>
+        <div>
+            <p>You have not registered yet? Click <a routerLink="/register"> here</a></p>
+        </div>
     </div>
 </div>

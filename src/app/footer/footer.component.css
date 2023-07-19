@@ -3,4 +3,6 @@
     background-color: #CCE6FF;
     text-align: center;
     width: 99%;
+    position: absolute;
+    bottom: 0;
 }

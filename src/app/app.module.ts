@@ -15,9 +15,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RealEstateEditComponent } from './realEstates/real-estate-edit/real-estate-edit.component';
 import { RealEstateService } from './realEstates/realEstate.service';
-import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptor } from './auth/auth-interceptor.service';
+import { AuthModule } from './auth/auth.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +32,8 @@ import { AuthInterceptor } from './auth/auth-interceptor.service';
     AboutComponent,
     HomePageComponent,
     RealEstateEditComponent,
-    AuthComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +41,7 @@ import { AuthInterceptor } from './auth/auth-interceptor.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AuthModule
   ],
   providers: [RealEstateService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]

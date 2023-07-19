@@ -1,13 +1,17 @@
-<app-header></app-header>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <!-- <app-real-estates-list *ngIf="chosenCategory==='realEstateList' && !selectedRealEstate"></app-real-estates-list>
+<div class="all">
+  <div class="content-wrap">
+    <app-header></app-header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- <app-real-estates-list *ngIf="chosenCategory==='realEstateList' && !selectedRealEstate"></app-real-estates-list>
       <app-wish-list *ngIf="chosenCategory==='wishList'"></app-wish-list>
       <app-real-estate-details *ngIf="selectedRealEstate" [realEstateToDetailsFromApp]="selectedRealEstate"></app-real-estate-details> -->
-      <router-outlet></router-outlet>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
     </div>
   </div>
+  <app-footer></app-footer>
+  <br />
 </div>
-<br />
-<app-footer></app-footer>
