@@ -1,7 +1,7 @@
 import { RealEstate } from "./realEstate.model";
 import { TypeOfHouse } from "../shared/typeOfHouses";
 import { Injectable } from "@angular/core";
-
+import { HttpClient } from "@angular/common/http";
 import { Subject } from 'rxjs';
 import { DataStorageService } from "../shared/data-storage.service";
 
@@ -11,8 +11,10 @@ export class RealEstateService {
 
     private realEstates: RealEstate[] = [];
 
+    constructor(private http: HttpClient) {}
+
     getRealEstate() {
-        return this.realEstates.slice();
+      return this?.realEstates.slice();
     }
 
     getCurrentRealEstate(index: number) {
@@ -21,7 +23,15 @@ export class RealEstateService {
 
     addRealEstate(realEstate: RealEstate) {
       this.realEstates.push(realEstate);
-      console.log(this.realEstates);
+
+      // this.dataStorageService.addNewRealEstate(realEstate).subscribe((data: any) => {
+      //   console.log(data);
+      // });
+
+      this.http.post('https://ng-realestate-2407b-default-rtdb.europe-west1.firebasedatabase.app/realEstates.json', realEstate)
+      .subscribe(resolveData => {
+        console.log(resolveData);
+      });
       
       this.realEstateChanged.next(this.realEstates.slice());
     }

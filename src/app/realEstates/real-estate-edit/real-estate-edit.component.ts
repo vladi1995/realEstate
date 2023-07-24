@@ -37,6 +37,7 @@ export class RealEstateEditComponent implements OnInit {
       this.realEstateForm.value['price'],
       this.realEstateForm.value['size'],
       this.realEstateForm.value['town'],
+      JSON.parse(localStorage.getItem('userData')),
     );
     if (this.editMode) {
       this.realEstateService.updateRealEstate(this.id, newRealEstate);

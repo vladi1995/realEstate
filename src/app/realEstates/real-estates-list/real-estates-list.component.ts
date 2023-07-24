@@ -22,6 +22,8 @@ export class RealEstatesListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.realEstates = this.realEstateService.getRealEstate();
+    console.log(this.realEstates);
+    
     this.subscription = this.realEstateService.realEstateChanged.subscribe(
       (realEstate: RealEstate[]) => {
         this.realEstates = realEstate;

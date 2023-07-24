@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { RealEstateService } from "../realEstates/realEstate.service";
 import { RealEstate } from "../realEstates/realEstate.model";
-import { tap, pipe, take, exhaustMap, map } from "rxjs";
+import { tap, pipe, take, exhaustMap, map, Observable } from "rxjs";
 import { AuthService } from "../auth/auth.service";
 
 @Injectable({ providedIn: 'root' })

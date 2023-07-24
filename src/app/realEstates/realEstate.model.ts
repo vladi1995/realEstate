@@ -1,3 +1,4 @@
+import { User } from "../auth/user.model";
 import { TypeOfHouse } from "../shared/typeOfHouses";
 
 export class RealEstate {
@@ -8,6 +9,7 @@ export class RealEstate {
     public price: number;
     public quadratMeter: number;
     public town: string;
+    public owner: User;
 
     constructor(
         name: string,
@@ -16,7 +18,8 @@ export class RealEstate {
         type: TypeOfHouse,
         price: number,
         quadratMeter: number,
-        town: string
+        town: string,
+        owner: User,
     ) { 
         this.name = name;
         this.description = description;
@@ -25,5 +28,6 @@ export class RealEstate {
         this.price = price;
         this.quadratMeter = quadratMeter;
         this.town = town;
+        this.owner = owner;
     }
 }
