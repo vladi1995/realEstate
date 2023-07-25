@@ -15,6 +15,7 @@ export class RealEstateEditComponent implements OnInit {
   editMode = false;
   typeOfHouse: string[] = Object.values(TypeOfHouse);
   realEstateForm: FormGroup;
+  isOwner: boolean = false;
 
   constructor(private route: ActivatedRoute, private realEstateService: RealEstateService, private router: Router) {}
 
@@ -67,6 +68,11 @@ export class RealEstateEditComponent implements OnInit {
       realEstateTown = realEstate.town;
       realEstatePrice = realEstate.price;
       realEstateSize = realEstate.quadratMeter;
+
+      const isOwner = JSON.parse(localStorage.getItem('userData')).email === realEstate.owner.email;
+      if(!isOwner) {
+        this.router.navigate(['./login']);
+      }
     }
 
     this.realEstateForm = new FormGroup({

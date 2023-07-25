@@ -14,7 +14,7 @@ export class RealEstateService {
     constructor(private http: HttpClient) {}
 
     getRealEstate() {
-      return this?.realEstates.slice();
+      return this.realEstates.slice();
     }
 
     getCurrentRealEstate(index: number) {

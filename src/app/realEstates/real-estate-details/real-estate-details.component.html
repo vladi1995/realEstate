@@ -7,8 +7,8 @@
   <div class="col-xs-12">
     <h1>{{ realEstateToDetailsFromApp.name }}</h1>
     <span class="pull-right">
-        <button type="button" class="btn btn-primary" (click)="onEditRealEstate()">Edit</button>
-        <button type="button" class="btn btn-danger" (click)="onDeleteRealEstate()">Delete</button>
+        <button type="button" class="btn btn-primary" (click)="onEditRealEstate()" *ngIf="isOwner">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="onDeleteRealEstate()" *ngIf="isOwner">Delete</button>
       </span>
   </div>
 </div>

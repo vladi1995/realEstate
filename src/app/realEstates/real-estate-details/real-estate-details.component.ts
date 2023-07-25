@@ -12,6 +12,7 @@ import { RealEstateService } from '../realEstate.service';
 export class RealEstateDetailsComponent implements OnInit {
   realEstateToDetailsFromApp: RealEstate;
   id: number;
+  isOwner: boolean = false;
 
   constructor(private realEstateService: RealEstateService, private route: ActivatedRoute, private router: Router) {}
 
@@ -19,7 +20,12 @@ export class RealEstateDetailsComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.id = +params['id'];
-        this.realEstateToDetailsFromApp = this.realEstateService.getCurrentRealEstate(this.id);  
+        this.realEstateToDetailsFromApp = this.realEstateService.getCurrentRealEstate(this.id); 
+        console.log(JSON.parse(localStorage.getItem('userData')));
+        console.log(( this.realEstateToDetailsFromApp.owner['_token']));
+        
+        
+        this.isOwner = JSON.parse(localStorage.getItem('userData')).email === this.realEstateToDetailsFromApp.owner.email;
       }
     )
   }

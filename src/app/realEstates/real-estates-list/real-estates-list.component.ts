@@ -18,17 +18,20 @@ export class RealEstatesListComponent implements OnInit, OnDestroy {
 
   constructor(private realEstateService: RealEstateService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private dataStorageService: DataStorageService) { }
 
-  ngOnInit(): void {
-    this.realEstates = this.realEstateService.getRealEstate();
-    console.log(this.realEstates);
-    
+  ngOnInit(): void {;
+    this.dataStorageService.fetchRealEstates().subscribe(data => {
+      console.log(1);
+    });
+
     this.subscription = this.realEstateService.realEstateChanged.subscribe(
       (realEstate: RealEstate[]) => {
         this.realEstates = realEstate;
       }
-    )
+      )
+      this.realEstates = this.realEstateService.getRealEstate();
   }
 
   onNewRealEstate() {

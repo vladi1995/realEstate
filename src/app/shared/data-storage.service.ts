@@ -24,7 +24,8 @@ export class DataStorageService {
         return this.authService.user.pipe(take(1), exhaustMap(user => {
             return this.http.get<RealEstate[]>('https://ng-realestate-2407b-default-rtdb.europe-west1.firebasedatabase.app/realEstates.json').pipe(
                 tap(realEstates => {
-                    this.realEstateService.setRealEstates(realEstates);
+                    console.log(realEstates);      
+                    this.realEstateService.setRealEstates(Object.values(realEstates));
                 })
             );
         }));
