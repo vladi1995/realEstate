@@ -22,9 +22,9 @@ export class RealEstatesListComponent implements OnInit, OnDestroy {
     private dataStorageService: DataStorageService) { }
 
   ngOnInit(): void {;
-    this.dataStorageService.fetchRealEstates().subscribe(data => {
-      console.log(1);
-    });
+    // this.dataStorageService.fetchRealEstates().subscribe(data => {
+      
+    // });
 
     this.subscription = this.realEstateService.realEstateChanged.subscribe(
       (realEstate: RealEstate[]) => {

@@ -4,14 +4,16 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Subject } from 'rxjs';
 import { DataStorageService } from "../shared/data-storage.service";
+import { Router } from "@angular/router";
 
 @Injectable({providedIn: 'root'})
 export class RealEstateService {
     realEstateChanged = new Subject<RealEstate[]>();
 
     private realEstates: RealEstate[] = [];
+    public realEstateId: string[];
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private router: Router) {}
 
     getRealEstate() {
       return this.realEstates.slice();
@@ -44,6 +46,11 @@ export class RealEstateService {
     deleteRealEstate(index: number) {
       this.realEstates.splice(index, 1);
       this.realEstateChanged.next(this.realEstates.slice());
+      this.http.delete(`https://ng-realestate-2407b-default-rtdb.europe-west1.firebasedatabase.app/realEstates/${this.realEstateId[index]}.json`).subscribe(data=>{
+        console.log(data);
+      })
+      
+      this.router.navigate(['./realEstateList']);
     }
 
     setRealEstates(realEstates: RealEstate[]) {

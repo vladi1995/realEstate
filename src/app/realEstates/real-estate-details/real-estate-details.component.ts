@@ -21,10 +21,6 @@ export class RealEstateDetailsComponent implements OnInit {
       (params: Params) => {
         this.id = +params['id'];
         this.realEstateToDetailsFromApp = this.realEstateService.getCurrentRealEstate(this.id); 
-        console.log(JSON.parse(localStorage.getItem('userData')));
-        console.log(( this.realEstateToDetailsFromApp.owner['_token']));
-        
-        
         this.isOwner = JSON.parse(localStorage.getItem('userData')).email === this.realEstateToDetailsFromApp.owner.email;
       }
     )
@@ -35,7 +31,10 @@ export class RealEstateDetailsComponent implements OnInit {
   }
 
   onDeleteRealEstate() {
-    this.realEstateService.deleteRealEstate(this.id);
-    this.router.navigate(['/realEstateList']);
+    const confirmation = confirm("Are you sure you want to delete?");
+    if (confirmation) {
+      this.realEstateService.deleteRealEstate(this.id);
+      this.router.navigate(['/realEstateList']);
+    }
   }
 }
