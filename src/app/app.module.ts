@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { RealEstateItemComponent } from './realEstates/real-estates-list/real-estate-item/real-estate-item.component';
 import { RealEstateDetailsComponent } from './realEstates/real-estate-details/real-estate-details.component';
 import { RealEstatesListComponent } from './realEstates/real-estates-list/real-estates-list.component';
-import { WishListComponent } from './wishList/wishList.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { RealEstateEditComponent } from './realEstates/real-estate-edit/real-estate-edit.component';
@@ -18,6 +17,7 @@ import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { PaginationComponent } from './realEstates/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +25,10 @@ import { HomePageComponent } from './home-page/home-page.component';
     RealEstateItemComponent,
     RealEstateDetailsComponent,
     RealEstatesListComponent,
-    WishListComponent,
     HomePageComponent,
     RealEstateEditComponent,
     LoadingSpinnerComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,

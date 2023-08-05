@@ -6,6 +6,7 @@
 <hr>
 <div class="row">
     <div class="col-xs-12">
-        <app-real-estate-item *ngFor="let itemElement of realEstates; let i = index" [item]="itemElement" [i]="i"></app-real-estate-item>
+        <app-real-estate-item *ngFor="let itemElement of realEstateModifiedList; let i = index" [item]="itemElement" [i]="i + (currentPage-1) * 5"></app-real-estate-item>
     </div>
+    <app-pagination [realEstateList] = "realEstates" [currentPage]="currentPage" [limit]="5" [total]="realEstates.length" (changePage)="changePage($event)"></app-pagination>
 </div>

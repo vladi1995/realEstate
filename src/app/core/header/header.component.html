@@ -9,8 +9,7 @@
 
         <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
             <ul class="nav navbar-nav">
-                <li routerLinkActive="active" *ngIf="isAuthenticated"><a style="cursor: pointer" routerLink="/realEstateList">Real Estate List</a></li>
-                <li routerLinkActive="active"><a style="cursor: pointer" routerLink="/wishList">Wish List</a></li>
+                <li routerLinkActive="active"><a style="cursor: pointer" routerLink="/realEstateList">Real Estate List</a></li>
                 <li routerLinkActive="active"><a style="cursor: pointer" routerLink="/about">About</a></li>
             </ul>
 

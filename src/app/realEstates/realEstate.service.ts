@@ -40,6 +40,10 @@ export class RealEstateService {
 
     updateRealEstate(index: number, newRealEstate: RealEstate) {
       this.realEstates[index] = newRealEstate;
+      this.http.put(`https://ng-realestate-2407b-default-rtdb.europe-west1.firebasedatabase.app/realEstates/${this.realEstateId[index]}.json`, newRealEstate)
+      .subscribe(resolveData => {
+        console.log(resolveData);
+      });
       this.realEstateChanged.next(this.realEstates.slice());
     }
 
