@@ -1,4 +1,4 @@
-<ul class="pagination">
+<ul class="pagination" style="margin-left: 20px;">
     <li *ngFor="let page of pages" style="cursor: pointer" [ngClass]="{'page-item': true, active: currentPage === page}" (click)="changePage.emit(page)">
         <span class="page-link">{{ page }}</span>
     </li>

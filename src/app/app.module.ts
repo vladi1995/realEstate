@@ -19,6 +19,8 @@ import { PagesModule } from './pages/pages.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PaginationComponent } from './realEstates/pagination/pagination.component';
 
+import { SearchBarService } from './home-page/searchBar.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,7 @@ import { PaginationComponent } from './realEstates/pagination/pagination.compone
     HttpClientModule,
     AuthModule
   ],
-  providers: [RealEstateService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
+  providers: [SearchBarService, RealEstateService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

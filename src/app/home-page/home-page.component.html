@@ -5,11 +5,29 @@
         <p>Here you can find your home depending on your personal preferences.</p>
         <p><i>Home is where the heart is.</i></p>
         <hr>
-        <form>
-            <input type="text" name="searchBox" class="inputSearch" placeholder="Search...">
+        <form [formGroup]="searchForm" class="searchBar" (ngSubmit)="onSearchSubmit()">
+            <input type="text" name="search" class="searchBarInput" placeholder="Search by real estate name ..."
+            formControlName="searchValue">
             <button class="btn btn-success">Search</button>
         </form>
+        <br />
+        <div class="col-xs-6" *ngFor="let element of filteredRealEstates; let i = index">
+            <a style="cursor: pointer" class="list-group-item clearfix" routerLink="realEstateList/{{allRealEstates.indexOf(element)}}">
+                <div class="pull-left">
+                    <h4 class="list-group-item-heading">{{element.name}}</h4>
+                    <hr>
+                    <h4 class="list-group-item-heading">Price: <span class="bolder">{{element.price}} $</span></h4>
+                </div>
+                <span class="pull-right">
+                    <img src="{{element.imagePath}}" alt="{{element.name}}" class="img-responsive">
+                </span>
+            </a>
+        </div>
+        <div *ngIf="clickedSearch && filteredRealEstates.length === 0">
+            No Items Found!
+        </div>
     </div>
+    
     <div class="col-xs-6">
         <img src="../../assets/homePage.jpg" style="max-height: 500px;" />
     </div>
