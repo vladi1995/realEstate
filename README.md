@@ -6,7 +6,7 @@ The project is designed as a platform for real estates. User can login/register 
 
 This project was created by [Vladislav Dimitrov](https://github.com/vladi1995) for the purposes of Angular Softuni Course, July-August 2023. It is an application written in Angular with Firebase setup.
 
-The project is uploaded in render: [Live](https://ng-realestate-2407b.web.app/)
+The project is uploaded in Firebase: [Live](https://ng-realestate-2407b.web.app/)
 
 ## Public part (Guest):
 
