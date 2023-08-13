@@ -27,7 +27,7 @@ The project is uploaded in Firebase: [Live](https://ng-realestate-2407b.web.app/
 
 ## Functionalities:
 
-+ Search for a specific card
++ Search for specific real estate
 + Pagination
 + Application uploaded in cloud with the help of firebase - (https://ng-realestate-2407b.web.app/)
 + Bootstrap
