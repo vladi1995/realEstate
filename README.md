@@ -31,6 +31,6 @@ The project is uploaded in Firebase: [Live](https://ng-realestate-2407b.web.app/
 + Bootstrap
 
 ## Used technologies:
-1. Angular
+1. Angular & TypeScript
 2. HTML/CSS
 3. Firebase
