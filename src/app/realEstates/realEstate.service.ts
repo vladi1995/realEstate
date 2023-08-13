@@ -49,10 +49,10 @@ export class RealEstateService {
 
     deleteRealEstate(index: number) {
       this.realEstates.splice(index, 1);
-      this.realEstateChanged.next(this.realEstates.slice());
       this.http.delete(`https://ng-realestate-2407b-default-rtdb.europe-west1.firebasedatabase.app/realEstates/${this.realEstateId[index]}.json`).subscribe(data=>{
         console.log(data);
-      })
+      });
+      this.realEstateChanged.next(this.realEstates.slice());
       
       this.router.navigate(['./realEstateList']);
     }

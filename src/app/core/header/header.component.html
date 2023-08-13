@@ -14,6 +14,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+                <li><a style="cursor: pointer">{{user?.email}}</a></li>
                 <li><a style="cursor: pointer" *ngIf="isAuthenticated" (click)="onLogout()">Logout</a></li>
                 <li routerLinkActive="active" *ngIf="!isAuthenticated"><a style="cursor: pointer" routerLink="/login">Login</a></li>
                 <li routerLinkActive="active" *ngIf="!isAuthenticated"><a style="cursor: pointer" routerLink="/register">Register</a></li>

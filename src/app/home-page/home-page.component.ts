@@ -36,7 +36,7 @@ export class HomePageComponent implements OnInit {
   fetchData(): void {
     this.searchBarService.getRealEstates().subscribe(realEstates => {
       this.allRealEstates = Object.values(realEstates);
-      this.filteredRealEstates = Object.values(realEstates).filter(x => x.name.includes(this.searchValue));
+      this.filteredRealEstates = Object.values(realEstates).filter(x => x.name.toLowerCase().includes(this.searchValue.toLowerCase()));
     });
   }
 }
