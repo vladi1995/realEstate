@@ -8,6 +8,8 @@ This project was created by [Vladislav Dimitrov](https://github.com/vladi1995) f
 
 The project is uploaded in Firebase: [Live](https://ng-realestate-2407b.web.app/)
 
+![image](https://github.com/vladi1995/realEstate/blob/master/src/assets/homeScreen.PNG)
+
 ## Public part (Guest):
 
 + Home page
