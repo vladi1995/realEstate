@@ -1,27 +1,36 @@
-# RealEstate
+# RealEstate App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+## About The Project
 
-## Development server
+The project is designed as a platform for real estates. User can login/register and then he/she can upload edit or delete real estates in 6 categories. They can also search for a real estate.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project was created by [Vladislav Dimitrov](https://github.com/vladi1995) for the purposes of Angular Softuni Course, July-August 2023. It is an application written in Angular with Firebase setup.
 
-## Code scaffolding
+The project is uploaded in Firebase: [Live](https://ng-realestate-2407b.web.app/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Public part (Guest):
 
-## Build
++ Home page
++ Login page
++ Register page
++ About page
++ Catalog page
++ Search functionality
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Private part (User):
 
-## Running unit tests
++ Create card page
++ Details page:
+1. Edit page/Delete page - creator of card
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Functionalities:
 
-## Running end-to-end tests
++ Search for a specific card
++ Pagination
++ Application uploaded in cloud with the help of firebase - (https://ng-realestate-2407b.web.app/)
++ Bootstrap
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Used technologies:
+1. Angular & TypeScript
+2. HTML/CSS
+3. Firebase
