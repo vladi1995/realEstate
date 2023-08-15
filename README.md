@@ -31,6 +31,7 @@ The project is uploaded in Firebase: [Live](https://ng-realestate-2407b.web.app/
 + Pagination
 + Application uploaded in cloud with the help of firebase - (https://ng-realestate-2407b.web.app/)
 + Bootstrap
++ Angular animations when routing through the page
 
 ## Used technologies:
 1. Angular & TypeScript
