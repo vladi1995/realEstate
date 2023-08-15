@@ -26,10 +26,6 @@ export class RealEstateService {
     addRealEstate(realEstate: RealEstate) {
       this.realEstates.push(realEstate);
 
-      // this.dataStorageService.addNewRealEstate(realEstate).subscribe((data: any) => {
-      //   console.log(data);
-      // });
-
       this.http.post('https://ng-realestate-2407b-default-rtdb.europe-west1.firebasedatabase.app/realEstates.json', realEstate)
       .subscribe(resolveData => {
         console.log(resolveData);
@@ -40,6 +36,8 @@ export class RealEstateService {
 
     updateRealEstate(index: number, newRealEstate: RealEstate) {
       this.realEstates[index] = newRealEstate;
+      console.log(newRealEstate);
+      
       this.http.put(`https://ng-realestate-2407b-default-rtdb.europe-west1.firebasedatabase.app/realEstates/${this.realEstateId[index]}.json`, newRealEstate)
       .subscribe(resolveData => {
         console.log(resolveData);

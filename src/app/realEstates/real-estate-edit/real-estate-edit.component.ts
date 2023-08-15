@@ -4,6 +4,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { TypeOfHouse } from 'src/app/shared/typeOfHouses';
 import { RealEstateService } from '../realEstate.service';
 import { RealEstate } from '../realEstate.model';
+import { User } from 'src/app/auth/user.model';
 
 @Component({
   selector: 'app-real-estate-edit',
@@ -40,6 +41,7 @@ export class RealEstateEditComponent implements OnInit {
       this.realEstateForm.value['town'],
       JSON.parse(localStorage.getItem('userData')),
     );
+    
     if (this.editMode) {
       this.realEstateService.updateRealEstate(this.id, newRealEstate);
     } else {
@@ -77,7 +79,7 @@ export class RealEstateEditComponent implements OnInit {
 
     this.realEstateForm = new FormGroup({
       'name': new FormControl(realEstateName, [Validators.required, Validators.minLength(5)]),
-      'imagePath': new FormControl(realEstateImagePath, [Validators.required, Validators.minLength(5)]),
+      'imagePath': new FormControl(realEstateImagePath, [Validators.required, Validators.pattern(/^https?:/)]),
       'description': new FormControl(realEstateDescription, [Validators.required, Validators.minLength(5)]),
       'type': new FormControl(realEstateType, Validators.required),
       'town': new FormControl(realEstateTown, Validators.required),

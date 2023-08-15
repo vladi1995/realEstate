@@ -21,6 +21,9 @@ import { PaginationComponent } from './realEstates/pagination/pagination.compone
 
 import { SearchBarService } from './home-page/searchBar.service';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +41,11 @@ import { SearchBarService } from './home-page/searchBar.service';
     FormsModule,
     CoreModule,
     PagesModule,
+    RouterModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AuthModule
+    AuthModule,
+    BrowserAnimationsModule,
   ],
   providers: [SearchBarService, RealEstateService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]

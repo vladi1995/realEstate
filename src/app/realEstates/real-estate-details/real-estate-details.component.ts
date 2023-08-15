@@ -3,6 +3,8 @@ import { RealEstate } from '../realEstate.model';
 
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { RealEstateService } from '../realEstate.service';
+import { AuthService } from 'src/app/auth/auth.service';
+import { User } from 'src/app/auth/user.model';
 
 @Component({
   selector: 'app-real-estate-details',
@@ -13,8 +15,10 @@ export class RealEstateDetailsComponent implements OnInit {
   realEstateToDetailsFromApp: RealEstate;
   id: number;
   isOwner: boolean = false;
+  currentUser: User;
+  updatedRealEstate: RealEstate;
 
-  constructor(private realEstateService: RealEstateService, private route: ActivatedRoute, private router: Router) {}
+  constructor(private realEstateService: RealEstateService, private route: ActivatedRoute, private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(
@@ -23,7 +27,7 @@ export class RealEstateDetailsComponent implements OnInit {
         this.realEstateToDetailsFromApp = this.realEstateService.getCurrentRealEstate(this.id); 
         this.isOwner = JSON.parse(localStorage.getItem('userData')).email === this.realEstateToDetailsFromApp.owner.email;
       }
-    )
+    )    
   }
 
   onEditRealEstate() {

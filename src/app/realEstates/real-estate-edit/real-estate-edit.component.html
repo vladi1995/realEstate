@@ -17,7 +17,7 @@
                         <label for="imagePath">Image URL</label>
                         <input type="text" id="imagePath" class="form-control" formControlName="imagePath" #imagePath>
                     </div>
-                    <p class="errorMsg" *ngIf="realEstateForm.controls['imagePath'].errors && realEstateForm.controls['imagePath'].touched">Image Path must be at least 5 characters long!</p>
+                    <p class="errorMsg" *ngIf="realEstateForm.controls['imagePath'].errors && realEstateForm.controls['imagePath'].touched">Image Path must be at least 5 characters long and start with http/https!</p>
                 </div>
             </div>
 

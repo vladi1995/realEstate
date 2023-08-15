@@ -13,14 +13,14 @@ import { HomePageComponent } from "./home-page/home-page.component";
 
 const appRoutes: Routes = [
     { path: '', component: HomePageComponent },
-    { path: 'realEstateList',  component: RealEstatesListComponent,  resolve: [RealEstateResolverService] },
-    { path: 'realEstateList/new', component: RealEstateEditComponent, canActivate: [AuthGuard] },
-    { path: 'realEstateList/:id', component: RealEstateDetailsComponent, canActivate: [AuthGuard], resolve: [RealEstateResolverService] },
-    { path: 'realEstateList/:id/edit', component: RealEstateEditComponent, canActivate: [AuthGuard], resolve: [RealEstateResolverService] },
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
-    { path: 'about', component: AboutComponent },
-    { path: '**', component: NotFoundComponent }
+    { path: 'realEstateList',  component: RealEstatesListComponent,  resolve: [RealEstateResolverService], data: {animation: 'realEstateList'} },
+    { path: 'realEstateList/new', component: RealEstateEditComponent, canActivate: [AuthGuard], data: {animation: 'realEstateListNew'} },
+    { path: 'realEstateList/:id', component: RealEstateDetailsComponent, canActivate: [AuthGuard], resolve: [RealEstateResolverService], data: {animation: 'id'} },
+    { path: 'realEstateList/:id/edit', component: RealEstateEditComponent, canActivate: [AuthGuard], resolve: [RealEstateResolverService], data: {animation: 'id-edit'} },
+    { path: 'login', component: LoginComponent, data: {animation: 'login'} },
+    { path: 'register', component: RegisterComponent, data: {animation: 'register'} },
+    { path: 'about', component: AboutComponent, data: {animation: 'about'} },
+    { path: '**', component: NotFoundComponent, data: {animation: 'not-found'} }
 ]; 
 
 @NgModule({

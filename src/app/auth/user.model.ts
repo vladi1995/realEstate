@@ -1,3 +1,5 @@
+import { RealEstate } from "../realEstates/realEstate.model";
+
 export class User {
     public email: string;
     public id: string;
