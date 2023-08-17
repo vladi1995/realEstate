@@ -10,6 +10,10 @@ export class RealEstate {
     public quadratMeter: number;
     public town: string;
     public owner: User;
+    public comments: {
+        comment: string,
+        userAdded: string,
+    }[];
 
     constructor(
         name: string,
@@ -20,7 +24,11 @@ export class RealEstate {
         quadratMeter: number,
         town: string,
         owner: User,
-    ) { 
+        comments: [{
+            comment: string,
+            userAdded: string,
+        }],
+    ) {
         this.name = name;
         this.description = description;
         this.imagePath = imagePath;
@@ -29,5 +37,6 @@ export class RealEstate {
         this.quadratMeter = quadratMeter;
         this.town = town;
         this.owner = owner;
+        this.comments = comments;
     }
 }

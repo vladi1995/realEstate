@@ -38,6 +38,15 @@
     </p>
   </div>
 </div>
+<div class="row">
+  <div class="col-xs-12">
+    <p class="list-group-item-text">
+      Size: <span class="bolder">{{ realEstateToDetailsFromApp.quadratMeter }} m2</span>
+    </p>
+  </div>
+</div>
+
+
 
 <span class="pull-left">
   <img
@@ -46,3 +55,43 @@
     class="img-responsive"
   />
 </span>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Comments</h3>
+    <hr>
+    <div class="row" *ngFor="let comment of realEstateToDetailsFromApp.comments; let i = index">
+      <div class="col-xs-12" class="commentBlock" *ngIf="i > 0 && realEstateToDetailsFromApp.comments.length > 0">
+        <p class="list-group-item-text">
+          <b>Comment</b>: {{comment.comment}}
+        </p>
+        <p class="list-group-item-text">
+          <b>Added by</b>: {{comment.userAdded}}
+        </p>
+      </div>
+    </div>
+    
+    <div class="col-xs-12" class="commentBlock" *ngIf="realEstateToDetailsFromApp.comments.length == 1">
+      <p class="list-group-item-text">
+        <b>No comments added</b>
+      </p>
+    </div>
+    <hr>
+    <form [formGroup]="commentsForm" (ngSubmit)="onSubmit()" *ngIf="!isOwner">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="form-group">
+                  <label for="comment">Comment:</label>
+                  <textarea type="text" id="comment" class="form-control" formControlName="comment"></textarea>
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-xs-12">
+              <button type="submit" class="btn btn-success" [disabled]="!commentsForm.valid">Send comment</button>
+          </div>
+      </div>
+  </form>
+  </div>
+</div>

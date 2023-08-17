@@ -40,6 +40,7 @@ export class RealEstateEditComponent implements OnInit {
       this.realEstateForm.value['size'],
       this.realEstateForm.value['town'],
       JSON.parse(localStorage.getItem('userData')),
+      [{comment: '', userAdded: ''}],
     );
     
     if (this.editMode) {
