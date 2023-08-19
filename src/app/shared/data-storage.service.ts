@@ -21,13 +21,13 @@ export class DataStorageService {
     }
 
     fetchRealEstates() {
-        return this.authService.user.pipe(take(1), exhaustMap(user => {
+        // return this.authService.user.pipe(take(1), exhaustMap(user => {
             return this.http.get<RealEstate[]>('https://ng-realestate-2407b-default-rtdb.europe-west1.firebasedatabase.app/realEstates.json').pipe(
                 tap(realEstates => {
                     this.realEstateService.setRealEstates(Object.values(realEstates));
                     this.realEstateService.realEstateId = Object.keys(realEstates);
                 })
             );
-        }));
+        // }));
     }
 }
